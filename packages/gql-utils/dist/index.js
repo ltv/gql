@@ -18,7 +18,7 @@ var _asyncToGenerator2 = require('babel-runtime/helpers/asyncToGenerator');
 var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
 
 var readFileGlob = exports.readFileGlob = function () {
-  var _ref = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(fileGlob) {
+  var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(fileGlob) {
     var filePaths;
     return _regenerator2.default.wrap(function _callee$(_context) {
       while (1) {
@@ -45,7 +45,7 @@ var readFileGlob = exports.readFileGlob = function () {
 }();
 
 var readFilePaths = exports.readFilePaths = function () {
-  var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2(filePaths) {
+  var _ref2 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee2(filePaths) {
     var fileReads;
     return _regenerator2.default.wrap(function _callee2$(_context2) {
       while (1) {
@@ -72,7 +72,7 @@ var readFilePaths = exports.readFilePaths = function () {
 }();
 
 var readFilePath = exports.readFilePath = function () {
-  var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee3(filePath) {
+  var _ref3 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee3(filePath) {
     var fileContents;
     return _regenerator2.default.wrap(function _callee3$(_context3) {
       while (1) {
@@ -99,7 +99,7 @@ var readFilePath = exports.readFilePath = function () {
 }();
 
 var writeFileObjects = exports.writeFileObjects = function () {
-  var _ref4 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee4(fileDetails) {
+  var _ref4 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee4(fileDetails) {
     var fileWrites;
     return _regenerator2.default.wrap(function _callee4$(_context4) {
       while (1) {
@@ -126,7 +126,7 @@ var writeFileObjects = exports.writeFileObjects = function () {
 }();
 
 var writeFileObject = exports.writeFileObject = function () {
-  var _ref5 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee5(_ref6) {
+  var _ref5 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee5(_ref6) {
     var filePath = _ref6.filePath,
         fileContents = _ref6.fileContents;
     return _regenerator2.default.wrap(function _callee5$(_context5) {

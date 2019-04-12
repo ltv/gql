@@ -1,28 +1,28 @@
 {
-  "name": "gql-merge",
-  "version": "0.0.6",
+  "name": "@ltv/gql-merge",
+  "version": "0.1.0",
   "description": "Tools for merging GraphQL documents",
   "main": "dist/index.js",
   "bin": {
     "gql-merge": "dist/index.js"
   },
   "repository": "https://github.com/liamcurry/gql/tree/master/packages/gql-merge",
-  "author": "Liam Curry <liam@curry.name>",
+  "author": "Luc <luc@ltv.vn>, Liam Curry <liam@curry.name>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/liamcurry/gql/issues"
+    "url": "https://github.com/ltv/gql/issues"
   },
   "scripts": {
     "test": "ava"
   },
-  "homepage": "https://github.com/liamcurry/gql/tree/master/packages/gql-merge#readme",
+  "homepage": "https://github.com/ltv/gql/tree/master/packages/gql-merge#readme",
   "dependencies": {
-    "commander": "^2.9.0",
+    "commander": "^2.20.0",
     "gql-format": "^0.0.5",
     "gql-utils": "^0.0.2",
-    "graphql": "0.9.2"
+    "graphql": "^0.9.6"
   },
   "devDependencies": {
-    "ava": "^0.19.0"
+    "ava": "^0.19.1"
   }
 }

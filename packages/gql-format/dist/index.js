@@ -30,13 +30,8 @@ var _defineProperty2 = require('babel-runtime/helpers/defineProperty');
 
 var _defineProperty3 = _interopRequireDefault(_defineProperty2);
 
-/**
- * Find files matching the input glob, format them, and overwrite the originals.
- * @param {string} fileGlob - A glob pattern to find files, e.g. '*.graphql'
- * @return {Promise} The write files promise
- */
 var formatFileGlob = exports.formatFileGlob = function () {
-  var _ref = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(fileGlob) {
+  var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(fileGlob) {
     var fileObjects;
     return _regenerator2.default.wrap(function _callee$(_context) {
       while (1) {
@@ -74,7 +69,7 @@ var formatFileGlob = exports.formatFileGlob = function () {
 
 
 var formatFilePaths = exports.formatFilePaths = function () {
-  var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2(filePaths) {
+  var _ref2 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee2(filePaths) {
     var fileObjects;
     return _regenerator2.default.wrap(function _callee2$(_context2) {
       while (1) {
@@ -113,7 +108,7 @@ var formatFilePaths = exports.formatFilePaths = function () {
 
 
 var formatFileObjects = exports.formatFileObjects = function () {
-  var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee3(fileObjects) {
+  var _ref3 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee3(fileObjects) {
     var fileObjectsFormatted;
     return _regenerator2.default.wrap(function _callee3$(_context3) {
       while (1) {
@@ -160,7 +155,7 @@ var formatFileObjects = exports.formatFileObjects = function () {
  * @param program - The commander object to modify.
  */
 var cli = exports.cli = function () {
-  var _ref37 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee5() {
+  var _ref37 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee5() {
     var _this = this;
 
     var program = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _commander2.default;
@@ -191,7 +186,7 @@ var cli = exports.cli = function () {
 
             cliAddHelp(cliAddBasics(command));
             command.action(function () {
-              var _ref38 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee4(inputGlob, options) {
+              var _ref38 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee4(inputGlob, options) {
                 return _regenerator2.default.wrap(function _callee4$(_context4) {
                   while (1) {
                     switch (_context4.prev = _context4.next) {
@@ -226,7 +221,7 @@ var cli = exports.cli = function () {
 }();
 
 var cliAction = function () {
-  var _ref39 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee6(program) {
+  var _ref39 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee6(program) {
     var fileGlobs = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
     var formatFilePromises;
     return _regenerator2.default.wrap(function _callee6$(_context6) {
@@ -283,6 +278,13 @@ exports.default = (0, _defineProperty3.default)({
   formatFileGlob: formatFileGlob,
   formatFileObjects: formatFileObjects
 }, 'formatString', formatString);
+
+/**
+ * Find files matching the input glob, format them, and overwrite the originals.
+ * @param {string} fileGlob - A glob pattern to find files, e.g. '*.graphql'
+ * @return {Promise} The write files promise
+ */
+
 function formatString(schemaStr) {
   var schemaAst = (0, _language.parse)(schemaStr);
   return formatAst(schemaAst);

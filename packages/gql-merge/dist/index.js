@@ -1,4 +1,3 @@
-#!/usr/bin/env node
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -14,6 +13,10 @@ var _values = require('babel-runtime/core-js/object/values');
 
 var _values2 = _interopRequireDefault(_values);
 
+var _toConsumableArray2 = require('babel-runtime/helpers/toConsumableArray');
+
+var _toConsumableArray3 = _interopRequireDefault(_toConsumableArray2);
+
 var _regenerator = require('babel-runtime/regenerator');
 
 var _regenerator2 = _interopRequireDefault(_regenerator);
@@ -28,7 +31,7 @@ var _asyncToGenerator3 = _interopRequireDefault(_asyncToGenerator2);
  * @return {Promise<string>} A promise of the resulting string.
  */
 var mergeFileGlob = exports.mergeFileGlob = function () {
-  var _ref = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee(fileGlob) {
+  var _ref = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee(fileGlob) {
     var fileDetails, fileContents;
     return _regenerator2.default.wrap(function _callee$(_context) {
       while (1) {
@@ -65,7 +68,7 @@ var mergeFileGlob = exports.mergeFileGlob = function () {
 
 
 var mergeFilePaths = exports.mergeFilePaths = function () {
-  var _ref2 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee2(filePaths) {
+  var _ref2 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee2(filePaths) {
     var fileDetails, fileContents;
     return _regenerator2.default.wrap(function _callee2$(_context2) {
       while (1) {
@@ -102,7 +105,7 @@ var mergeFilePaths = exports.mergeFilePaths = function () {
 
 
 var cli = exports.cli = function () {
-  var _ref3 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee4() {
+  var _ref3 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee4() {
     var _this = this;
 
     var program = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _commander2.default;
@@ -133,7 +136,7 @@ var cli = exports.cli = function () {
 
             cliAddHelp(cliAddBasics(command));
             command.action(function () {
-              var _ref4 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee3(inputGlob, options) {
+              var _ref4 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee3(inputGlob, options) {
                 return _regenerator2.default.wrap(function _callee3$(_context3) {
                   while (1) {
                     switch (_context3.prev = _context3.next) {
@@ -168,7 +171,7 @@ var cli = exports.cli = function () {
 }();
 
 var cliAction = exports.cliAction = function () {
-  var _ref5 = (0, _asyncToGenerator3.default)(_regenerator2.default.mark(function _callee5(program) {
+  var _ref5 = (0, _asyncToGenerator3.default)( /*#__PURE__*/_regenerator2.default.mark(function _callee5(program) {
     var fileGlobs = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
     var _ref6 = arguments[2];
     var outFile = _ref6.outFile;
@@ -295,6 +298,17 @@ function mergeAst(schemaAst) {
       concatProps.forEach(function (propName) {
         if (node[propName] && oldNode[propName]) {
           node[propName] = oldNode[propName].concat(node[propName]);
+          if (propName === 'fields') {
+            node[propName] = node[propName].reduce(function (res, field) {
+              var has = res.find(function (f) {
+                return f.value === field.value;
+              });
+              if (!has) {
+                res = [].concat((0, _toConsumableArray3.default)(res), [field]);
+              }
+              return res;
+            }, []);
+          }
         }
       });
 
