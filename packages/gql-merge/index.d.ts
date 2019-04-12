@@ -1,4 +1,4 @@
-declare module 'gql-merge' {
+declare module '@ltv/gql-merge' {
   /**
  * Find GraphQL files based on a glob pattern and merge the results.
  * @param {string} fileGlob - A glob pattern to find files, e.g. '*.graphql'
