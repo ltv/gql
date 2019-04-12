@@ -1,6 +1,6 @@
 {
   "name": "@ltv/gql-merge",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Tools for merging GraphQL documents",
   "main": "dist/index.js",
   "typings": "index.d.ts",
