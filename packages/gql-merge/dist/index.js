@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
@@ -297,18 +298,15 @@ function mergeAst(schemaAst) {
       var concatProps = ['fields', 'values', 'types'];
       concatProps.forEach(function (propName) {
         if (node[propName] && oldNode[propName]) {
-          node[propName] = oldNode[propName].concat(node[propName]);
-          if (propName === 'fields') {
-            node[propName] = node[propName].reduce(function (res, field) {
-              var has = res.find(function (f) {
-                return f.value === field.value;
-              });
-              if (!has) {
-                res = [].concat((0, _toConsumableArray3.default)(res), [field]);
-              }
-              return res;
-            }, []);
-          }
+          node[propName] = oldNode[propName].reduce(function (res, field) {
+            var has = res.find(function (f) {
+              return f.name.value === field.name.value;
+            });
+            if (!has) {
+              res = [].concat((0, _toConsumableArray3.default)(res), [field]);
+            }
+            return res;
+          }, []);
         }
       });
 
