@@ -1,17 +1,18 @@
 declare module '@ltv/gql-merge' {
+  import { DocumentNode } from "graphql";
   /**
  * Find GraphQL files based on a glob pattern and merge the results.
  * @param {string} fileGlob - A glob pattern to find files, e.g. '*.graphql'
  * @return {Promise<string>} A promise of the resulting string.
  */
-  export async function mergeFileGlob(fileGlob: string): Promise<string>;
+  export function mergeFileGlob(fileGlob: string): Promise<string>;
 
   /**
    * Find GraphQL files based on a glob pattern and merge the results.
    * @param {string} fileGlob - A glob pattern to find files, e.g. '*.graphql'
    * @return {Promise<string>} A promise of the resulting string.
    */
-  export async function mergeFilePaths(filePaths: string[]): Promise<string>;
+  export function mergeFilePaths(filePaths: string[]): Promise<string>;
 
   /**
    * Merges an array of GraphQL strings into one
@@ -32,5 +33,5 @@ declare module '@ltv/gql-merge' {
    * @param {Document} schemaAst - The GraphQL AST.
    * @return {string} The resulting merged GraphQL string.
    */
-  export function mergeAst(schemaAst: Document): string;
+  export function mergeAst(schemaAst: DocumentNode): string;
 }
